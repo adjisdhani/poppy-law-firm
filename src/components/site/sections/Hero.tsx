@@ -67,7 +67,7 @@ const Hero = () => {
         {/* Right image */}
         <div className="hidden lg:block lg:col-span-5 bg-navy relative overflow-hidden min-h-[600px]">
           <img
-            src="/hero-poppy.jpg"
+            src={getAssetUrl("/hero-poppy.jpg")}
             alt="Interior Kantor Poppy & Partners"
             width={1024}
             height={1280}
