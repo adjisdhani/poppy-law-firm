@@ -7,7 +7,14 @@ export function cn(...inputs: ClassValue[]) {
 
 export function getAssetUrl(path: string) {
   const baseUrl = import.meta.env.VITE_APP_URL || "";
-  // Ensure path starts with / if baseUrl is provided
+  
+  // Hapus garis miring di akhir baseUrl jika ada
+  const normalizedBase = baseUrl.endsWith('/') 
+    ? baseUrl.slice(0, -1) 
+    : baseUrl;
+
+  // Pastikan path mulai dengan /
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
-  return `${baseUrl}${cleanPath}`;
+
+  return `${normalizedBase}${cleanPath}`;
 }
