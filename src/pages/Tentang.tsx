@@ -74,7 +74,7 @@ const Tentang = () => {
                 <div className="aspect-[3/4] bg-navy/5 overflow-hidden rounded-2xl mb-6 relative">
                   {idx === 0 ? (
                     <img 
-                      src={getAssetUrl(member.image)} 
+                      src={member.image} 
                       alt={member.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />

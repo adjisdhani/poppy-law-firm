@@ -31,10 +31,10 @@ const Seo = ({ title, description, path }: SeoProps) => {
     setMeta('meta[property="og:title"]', "content", title);
     setMeta('meta[property="og:description"]', "content", description);
     setMeta('meta[property="og:url"]', "content", url);
-    setMeta('meta[property="og:image"]', "content", getAssetUrl("/og-image.jpg"));
+    setMeta('meta[property="og:image"]', "content", "/og-image.jpg");
     setMeta('meta[name="twitter:title"]', "content", title);
     setMeta('meta[name="twitter:description"]', "content", description);
-    setMeta('meta[name="twitter:image"]', "content", getAssetUrl("/og-image.jpg"));
+    setMeta('meta[name="twitter:image"]', "content", "/og-image.jpg");
 
     // Security Headers (Basic CSP and X-Frame-Options simulation via meta)
     setMeta('meta[http-equiv="Content-Security-Policy"]', "content", "default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https: fonts.googleapis.com; font-src 'self' https: fonts.gstatic.com; img-src 'self' data: https:;");

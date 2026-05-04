@@ -30,7 +30,7 @@ const PoppyButton = () => {
       >
         <div className="absolute -top-3 -left-3 w-20 h-20 md:w-24 md:h-24 pointer-events-none animate-poppy-bob overflow-hidden rounded-full border-2 border-white shadow-md bg-white">
           <img 
-            src={getAssetUrl("/poppy-character.png")} 
+            src="/poppy-character.png" 
             alt="Poppy" 
             className="w-full h-full object-cover"
           />
