@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Poppy & Partners — Law Firm Design System
+   All colors in HSL. Navy authority + warm paper + brushed gold accent. */
+
+@layer base {
+  :root {
+    /* Brand surfaces */
+    --background: 0 0% 100%;
+    --foreground: 217 47% 8%;
+
+    --paper: 30 17% 98%;
+    --stone: 220 13% 91%;
+    --stone-muted: 220 14% 96%;
+
+    /* Navy authority */
+    --navy: 217 47% 8%;
+    --navy-muted: 218 33% 15%;
+    --navy-foreground: 30 17% 98%;
+
+    /* Gold accent */
+    --gold: 39 34% 54%;
+    --gold-soft: 39 34% 64%;
+    --gold-foreground: 217 47% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 217 47% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 47% 8%;
+
+    --primary: 217 47% 8%;
+    --primary-foreground: 30 17% 98%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 217 47% 8%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 16% 40%;
+
+    --accent: 39 34% 54%;
+    --accent-foreground: 217 47% 8%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 30 17% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 47% 8%;
+
+    --radius: 0.25rem;
+
+    /* Shadows & gradients */
+    --shadow-elegant: 0 20px 60px -20px hsl(var(--navy) / 0.18);
+    --shadow-card: 0 1px 3px 0 hsl(var(--navy) / 0.06), 0 1px 2px -1px hsl(var(--navy) / 0.06);
+    --gradient-navy: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy-muted)) 100%);
+    --gradient-gold-line: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);
+
+    /* Motion */
+    --ease-elegant: cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-base: 300ms var(--ease-elegant);
+  }
+
+  .dark {
+    --background: 217 47% 6%;
+    --foreground: 30 17% 98%;
+    --card: 217 47% 8%;
+    --card-foreground: 30 17% 98%;
+    --popover: 217 47% 8%;
+    --popover-foreground: 30 17% 98%;
+    --primary: 30 17% 98%;
+    --primary-foreground: 217 47% 8%;
+    --secondary: 218 33% 15%;
+    --secondary-foreground: 30 17% 98%;
+    --muted: 218 33% 15%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 39 34% 54%;
+    --accent-foreground: 217 47% 8%;
+    --border: 218 33% 18%;
+    --input: 218 33% 18%;
+    --ring: 39 34% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  ::selection {
+    background: hsl(var(--gold) / 0.3);
+    color: hsl(var(--navy));
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+}
+
+@layer components {
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground/70;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply block h-px w-10 bg-accent;
+  }
+
+  .container-narrow {
+    @apply mx-auto w-full max-w-[1280px] px-6 lg:px-12;
+  }
+
+  .gold-divider {
+    @apply h-px w-12 bg-accent;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 800ms var(--ease-elegant), transform 800ms var(--ease-elegant);
+  }
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
